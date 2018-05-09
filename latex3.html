@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Главная страница</title>
+  <title>latex</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    <style>
+      table {
+      cellpadding: 0;
+      width: 800px; 
+      margin: auto;
+    }
+      caption{
+        font-family: Georgia;
+        font-size: 24px;
+        font-weight: normal;
+        cursor: pointer;
+        text-shadow: -1px -1px #000, 0 1px 0 #444;
+         color: white;
+      }
+      p{
+        font-size: 16px;
+        font-family: Georgia;
+      }
+    </style>
+	<link rel="stylesheet" type="text/css" href="css/format.css">
+</head>
+<body background="images/228.jpg">
+ <div id="menu">
+ <center>
+ 	<table><tr>
+    <td><a href="index.html"><div id="button_1" class="mbut">Lab Work № 1</div></a></td>
+    <td><a href="#"><div id="button_2" class="mbut">Lab Work № 2</div></a></td>
+    <td><a href="latex3.html"><div id="button_3" class="mbut">Lab Work № 3</div></a></td>
+    <td><a href=""><div id="button_4" class="mbut">Lab Work № 4</div></a></td>
+    <td><a href="#"><div id="button_5" class="mbut">Lab Work № 5</div></a></td>
+    <td><a href=""><div id="button_6" class="mbut">Lab Work № 6</div></a></td>
+    </tr>  
+  </table></center>
+ </div>
+ <div id="titul">
+ <center><img src="images/770.png" class="zag"></center>  
+ </div>
+ <table style="border:4px solid #C1437A; background-color: white;margin-top: 300px;" > 
+
+      <caption style="background-color: #DC143C">
+      Вычислить производную неявной функции - пример
+      </caption>
+
+      <tr>
+        <td>
+          <p>Задание:<br>
+          Найти  ${\left({y}\right)'_{x}}$ для функции 
+          ${{2 \frac{\sin(x)}{{{y}^{2}}}}={x+y}}$<br>
+         Решение:<br>
+         ${{2 \frac{\sin(x)}{{{y}^{2}}}-x-y}={0}}$<br>
+         ${{F}={2 \frac{\sin(x)}{{{y}^{2}}}-x-y}}$<br>
+         Продифференцируем F учитывая, что $y$ есть функция от $x$</p>
+      
+          <p>${\left({2 \frac{\sin(x)}{{{y}^{2}}}-x-y}\right)'_{x}}=&emsp;
+          {\left({- x}\right)'_{x}}+{\left({2 \frac{\sin(x)}{{{y}^{2}}}}\right)'_{x}}+{\left({- y}\right)'_{x}}=&emsp;
+          -{\left({x}\right)'_{x}}+2 {\left({\frac{\sin(x)}{{{y}^{2}}}}\right)'_{x}}-{\left({y}\right)'_{x}}=$
+          $-1-{\left({y}\right)'_{x}}+2  \sin(x) {\left({\frac{1}{{{y}^{2}}}}\right)'_{x}}+2 \frac{{\left({\sin(x)}\right)'_{x}}}{{{y}^{2}}}=&emsp;
+          -1-4 \frac{ \sin(x) {\left({y}\right)'_{x}}}{{{y}^{3}}}-{\left({y}\right)'_{x}}+2 \frac{\cos(x)}{{{y}^{2}}}=&emsp;
+          \frac{2  \cos(x) y-4  \sin(x) {\left({y}\right)'_{x}}- {\left({y}\right)'_{x}} {{y}^{3}}-{{y}^{3}}}{{{y}^{3}}}$</p>
+        
+          <p>${{\frac{2  \cos(x) y-4  \sin(x) {\left({y}\right)'_{x}}- {\left({y}\right)'_{x}} {{y}^{3}}-{{y}^{3}}}{{{y}^{3}}}}={0}}$<br>
+          ${{{\left({y}\right)'_{x}}}={\frac{2  \cos(x) y-{{y}^{3}}}{4 \sin(x)+{{y}^{3}}}}}$</p>
+      
+          <p>Ответ:<br>
+          ${{{\left({y}\right)'_{x}}}={\frac{2  \cos(x) y-{{y}^{3}}}{4 \sin(x)+{{y}^{3}}}}}$</p>
+        </td>
+      </tr>
+    </table>
+
+
+
+
+    <table style="border:4px solid #C1437A; background-color: white; margin-top: 30px" > 
+
+      <caption style="background-color: #DC143C">
+      Вычислить производную функции, заданной параметрически
+      </caption>
+
+      <tr>
+        <td>
+          <p>Задание:<br>
+          Найти производную ${\left({y}\right)'_{x}}$ функции 
+          $\left\{\begin{array}{l}{{{x}={ \sin(t) t}}}\\{{{y}={\frac{1}{t}}}}\end{array}\right.$<br>
+         Решение:<br>
+         ${{{\left({y}\right)'_{x}}}={\frac{{\left({y}\right)'_{t}}}{{\left({x}\right)'_{t}}}}}$<br>
+         ${{{\left({x}\right)'_{t}}}={{\left({ \sin(t) t}\right)'_{t}}}}&emsp;{{{\left({y}\right)'_{t}}}={{\left({\frac{1}{t}}\right)'_{t}}}}$<br></p>
+      
+          <p>${\left({ \sin(t) t}\right)'_{t}}=&emsp;
+          {\left({\sin(t)}\right)'_{t}} t+ \sin(t) {\left({t}\right)'_{t}}=&emsp;
+          \cos(t) t+\sin(t)$<br>
+          ${\left({\frac{1}{t}}\right)'_{t}}=&emsp;
+          -\frac{1}{{{t}^{2}}}=$</p>
+        
+          <p>${\left({y}\right)'_{x}}=&emsp;
+            {\frac {-\frac{1}{{{t}^{2}}}}{ \cos(t) t+\sin(t)}}=&emsp;
+            -\frac{1}{ {( \cos(t) t+\sin(t))} {{t}^{2}}}$</p>
+      
+          <p>Ответ:<br>
+          ${{{\left({y}\right)'_{x}}}={-\frac{1}{ {( \cos(t) t+\sin(t))} {{t}^{2}}}}}$</p>
+        </td>
+      </tr>
+    </table>
+
+
+</body>
+</html>
