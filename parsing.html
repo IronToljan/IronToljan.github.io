@@ -1,0 +1,135 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet">
+
+<script type="text/javascript">
+
+// basic function for loading an XML file
+function loadXML(file) {
+ try {
+ // firefox, mozilla, opera, IE7/8 etc... 
+ var req = new XMLHttpRequest();
+ req.open("GET", file, false);
+ req.send(null);
+ return req.responseXML;
+ }
+ catch (e) {
+ try {
+ // internet explorer 4/5/6
+ var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+ xmlDoc.async = false;
+ xmlDoc.load(file);
+ return xmlDoc;
+ }
+ catch (e) {
+ alert(e.message);
+ return null;
+ }
+ }
+} 
+
+</script>
+</head>
+<body>
+	<div id="wrapper">
+
+		<a name="USA" id="USA" href="#" onmouseover="showSelectedCategory(this)">США</a> 
+
+		<a name="Australia" id="Australia" href="#" onmouseover="showSelectedCategory(this)">Австралия</a> 
+
+		<a name="Canada" id="Canada" href="#" onmouseover="showSelectedCategory(this)">Канада</a>
+
+		<a name="South_Korea" id="South_Korea" href="#" onmouseover="showSelectedCategory(this)">Южная Корея</a> 
+
+		<a name="North_Korea" id="North_Korea" href="#" onmouseover="showSelectedCategory(this)">Северная Корея</a> 
+
+		<a name="Russia" id="Russia" href="#" onmouseover="showSelectedCategory(this)">Россия</a>
+
+		<a name="Germany" id="Germany" href="#" onmouseover="showSelectedCategory(this)">Германия</a> 
+
+		<a name="Japan" id="Japan" href="#" onmouseover="showSelectedCategory(this)">Япония</a> 
+
+		<a name="Croatia" id="Croatia" href="#" onmouseover="showSelectedCategory(this)">Хорватия</a>
+		
+		<div style="height: 50px"></div>
+
+		<div name="country0" id="country0"></div>
+		<div name="growth0" id="growth0"></div>
+		<div name="weight0" id="weight0"></div>
+		<div name="life0" id="life0"></div>
+
+<script type="text/javascript">
+
+var xmlDoc = loadXML("something.xml");
+
+function showSelectedCategory(coloredLink) {
+
+ var group = coloredLink.name;
+
+ // Create a variable called categoryCounter
+ // to use in the following for-loop.
+
+ var categoryCounter = 0;
+
+ // # of div sections. Example: 0,1,2,3 so that's 4
+
+ var divNum = 4; 
+
+ // Start the loop at 0 by convention and increment the variable i by
+ // 1 until it reaches the length of xmlDoc.getElementsByTagName("product")
+ // In this case the length is 9 because the XML file has 9 products.
+
+ for (var i = 0; i < xmlDoc.getElementsByTagName("characteristic").length; i++) {
+
+ var country = "country" + categoryCounter;
+ var growth = "growth" + categoryCounter;
+ var weight = "weight" + categoryCounter;
+ var life = "life" + categoryCounter;
+
+ // if the category variable matches a category in the XML file...
+ if (xmlDoc.getElementsByTagName("characteristic")
+ [i].attributes.getNamedItem("group").nodeValue == group) { 
+  
+ // assign the XML data in the category to the divs for display
+ document.getElementById(country).innerHTML =
+ xmlDoc.getElementsByTagName("country")[i].childNodes[0].nodeValue;
+ document.getElementById(growth).innerHTML = "Рост: "+
+ xmlDoc.getElementsByTagName("growth")[i].childNodes[0].nodeValue;
+ document.getElementById(weight).innerHTML = "Вес: " +
+ xmlDoc.getElementsByTagName("weight")[i].childNodes[0].nodeValue;
+ document.getElementById(life).innerHTML = "Продолжительность жизни: " +
+ xmlDoc.getElementsByTagName("life")[i].childNodes[0].nodeValue;
+
+ // increment by 1 each time the category matches
+ categoryCounter++;
+
+ } // end if
+
+ } // end for-loop
+
+ // straggler variable is old data that should be cleared 
+
+ for (var straggler = categoryCounter; straggler < divNum; straggler++) {
+
+ // these variables get assigned new values 
+
+ country = "country" + straggler;
+ growth = "growth" + straggler;
+ weight = "weight" + straggler; 
+ life = "life" + straggler;
+
+ // set to blank
+
+ document.getElementById(fio).innerHTML = "";
+ document.getElementById(growth).innerHTML = "";
+ document.getElementById(weight).innerHTML = "";
+ document.getElementById(life).innerHTML = "";
+
+ }
+
+}
+</script>
+</div>
+</body>
+</html>
